@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af2f3ec3-20d8-449d-8b7a-39e64b5e6c51" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/InputSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Editor/CurveEditUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Editor/DirectorNamedColor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Editor/MenuPriority.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Editor/TimelineHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Editor/Window/TimelineWindow_PreviewPlayMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline/Runtime/TimelineAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/TMP/TMP_InputFieldEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87c38cf875804a0cbcc2bd5e75635dd41dda00/37/5198092f/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2q2LVTIRH8aveAoESTAcpNLBn2C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.0.24f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.0.24f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af2f3ec3-20d8-449d-8b7a-39e64b5e6c51" name="Changes" comment="" />
+      <created>1733855746442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733855746442</updated>
+      <workItem from="1733855748221" duration="9430000" />
+      <workItem from="1733944315011" duration="1242000" />
+      <workItem from="1734023104652" duration="10520000" />
+      <workItem from="1734086616542" duration="10243000" />
+      <workItem from="1734171810094" duration="2051000" />
+      <workItem from="1734467263453" duration="3104000" />
+      <workItem from="1734893948230" duration="5432000" />
+      <workItem from="1735044909957" duration="1920000" />
+      <workItem from="1735053050467" duration="3842000" />
+      <workItem from="1735129895375" duration="4573000" />
+      <workItem from="1735247583231" duration="832000" />
+      <workItem from="1735412191326" duration="24065000" />
+      <workItem from="1735504258574" duration="16765000" />
+      <workItem from="1735584432763" duration="8245000" />
+      <workItem from="1735659041633" duration="7684000" />
+      <workItem from="1735899449683" duration="3622000" />
+      <workItem from="1735952777062" duration="2443000" />
+      <workItem from="1736369736919" duration="692000" />
+      <workItem from="1736455704003" duration="2449000" />
+      <workItem from="1736501522049" duration="6585000" />
+      <workItem from="1736726272782" duration="685000" />
+      <workItem from="1736789426476" duration="4162000" />
+      <workItem from="1737228226771" duration="9561000" />
+    </task>
+    <task id="LOCAL-00001" summary="INIT the shit">
+      <option name="closed" value="true" />
+      <created>1733870969058</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733870969058</updated>
+    </task>
+    <task id="LOCAL-00002" summary="FEAT - add strafing Movement">
+      <option name="closed" value="true" />
+      <created>1734090626021</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734090626021</updated>
+    </task>
+    <task id="LOCAL-00003" summary="FEAT -General Game Setup to feel good">
+      <option name="closed" value="true" />
+      <created>1734467311782</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734467311782</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1734905813059</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734905813059</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change Main Character">
+      <option name="closed" value="true" />
+      <created>1735130909698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735130909698</updated>
+    </task>
+    <task id="LOCAL-00006" summary="FEAT - Add Lock On base handling">
+      <option name="closed" value="true" />
+      <created>1735423787550</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735423787550</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat - fix locked movement">
+      <option name="closed" value="true" />
+      <created>1735434577962</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735434577962</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat - make damage collider just collide with damage character">
+      <option name="closed" value="true" />
+      <created>1735500262641</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735500262641</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat - add some base ai">
+      <option name="closed" value="true" />
+      <created>1735564607113</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735564607113</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Make the Combat Great Again!">
+      <option name="closed" value="true" />
+      <created>1735678125663</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735678125663</updated>
+    </task>
+    <task id="LOCAL-00011" summary="FEAT --- very big update ---&#10;new Character&#10;bow anims&#10;better controller &#10;vfx claws&#10;and so on &#10;and ofc jiggly boobs">
+      <option name="closed" value="true" />
+      <created>1736726952397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736726952397</updated>
+    </task>
+    <task id="LOCAL-00012" summary="FEAT - Add shooting projectiles(!)&#10;and bow and weapons and Projectiles">
+      <option name="closed" value="true" />
+      <created>1737235922831</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737235922832</updated>
+    </task>
+    <task id="LOCAL-00013" summary="FIX - fix movement">
+      <option name="closed" value="true" />
+      <created>1737236549049</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737236549049</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="INIT the shit" />
+    <MESSAGE value="FEAT - add strafing Movement" />
+    <MESSAGE value="FEAT -General Game Setup to feel good" />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="Change Main Character" />
+    <MESSAGE value="FEAT -" />
+    <MESSAGE value="FEAT - Add Lock On base handling" />
+    <MESSAGE value="feat - fix locked movement" />
+    <MESSAGE value="feat - make damage collider just collide with damage character" />
+    <MESSAGE value="feat - add some base ai" />
+    <MESSAGE value="Make the Combat Great Again!" />
+    <MESSAGE value="FEAT --- very big update ---&#10;new Character&#10;bow anims&#10;better controller &#10;vfx claws&#10;and so on &#10;and ofc jiggly boobs" />
+    <MESSAGE value="FEAT - Add shooting projectiles(!)&#10;and bow and weapons and Projectiles" />
+    <MESSAGE value="FIX - fix movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX - fix movement" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/DamageCollider.cs</url>
+          <line>58</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/DamageCollider.cs" containingFunctionPresentation="Method 'OnTriggerEnter'">
+            <startOffsets>
+              <option value="1834" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1835" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
