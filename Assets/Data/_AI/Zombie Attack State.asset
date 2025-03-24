@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd724f3aa974701af066bb364645a7, type: 3}
   m_Name: Zombie Attack State
   m_EditorClassIdentifier: 
+  attackCooldownDuration: 2.5

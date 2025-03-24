@@ -19,7 +19,7 @@ MonoBehaviour:
   - OH_Dagger_Attack1
   - OH_Dagger_Attack2
   - OH_Dagger_Attack3
-  - OH_Dagger_Attack1
+  - OH_Dagger_Attack4
   airAttackCombos:
   - Sword_Air_Attack_01
   - Sword_Air_Attack_02

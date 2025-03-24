@@ -10,7 +10,6 @@ namespace KrazyKatGames
         public Collider[] PlayerColliders { get; protected set; }
         protected DamageCollider leftHandDamageCollider;
         protected DamageCollider rightHandDamageCollider;
-        protected DamageCollider weaponDamageCollider;
 
         protected DamageCollider leftFootDamageCollider;
         protected DamageCollider rightFootDamageCollider;
@@ -54,7 +53,7 @@ namespace KrazyKatGames
                         rightHandDamageCollider = damageCollider;
                         break;
                     case DamageColliderType.MeleeWeapon:
-                        //TODO!
+                      //  weaponDamageCollider = damageCollider;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -69,7 +68,7 @@ namespace KrazyKatGames
             if (_character.isPerformingAction) return;
             if (!_character.isGrounded) return;
             if (_character.isDead) return;
-            
+
             _character.audioSource.PlayOneShot(attackSound);
             _character.characterAnimatorManager.PlayTargetActionAnimation("Attack_01", true);
         }
@@ -84,11 +83,13 @@ namespace KrazyKatGames
         }
         public void DisableWeaponDamageCollider()
         {
-            if (_character.characterEquipmentManager.currentEquippedItem)
+            if (_character.characterEquipmentManager.currentEquippedItem != null)
             {
                 var damageCollider = _character.characterEquipmentManager.currentEquippedItem.GetComponentInChildren<DamageCollider>();
                 if (damageCollider != null)
+                {
                     damageCollider.DisableDamageCollider();
+                }
                 else
                     Debug.LogWarning("No DamageCollider attached to Weapon!");
             }

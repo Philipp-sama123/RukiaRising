@@ -111,13 +111,13 @@ namespace KrazyKatGames
                     player.playerCombatManager.hasBow = false;
                     player.playerCombatManager.isArmed = true;
                 }
-                else if (weaponItem.weaponType == WeaponType.Unarmed)
-                {
-                    player.playerCombatManager.hasBow = false;
-                    player.playerCombatManager.isArmed = false;
+            }
+            if (weaponItem.weaponType == WeaponType.Unarmed)
+            {
+                player.playerCombatManager.hasBow = false;
+                player.playerCombatManager.isArmed = false;
 
-                    currentEquippedItem = null;
-                }
+                currentEquippedItem = null;
             }
             currentEquippedWeaponItem = weaponItem;
 

@@ -17,7 +17,7 @@ namespace KrazyKatGames
         public PursueTargetState pursueTargetState;
         public PatrolState patrolState;
         public AttackState attackState;
-        public float stoppingDistance =1;
+        public float stoppingDistance = 1;
 
         protected override void Awake()
         {
@@ -25,6 +25,13 @@ namespace KrazyKatGames
 
             aiCharacterCombatManager = GetComponent<AICharacterCombatManager>();
             aICharacterLocomotionManager = GetComponent<AICharacterLocomotionManager>();
+            
+            // Create unique instances of each state if they hold mutable data
+            idleState = Instantiate(idleState);
+            combatStanceState = Instantiate(combatStanceState);
+            pursueTargetState = Instantiate(pursueTargetState);
+            patrolState = Instantiate(patrolState);
+            attackState = Instantiate(attackState);
         }
 
         protected override void Start()
@@ -45,9 +52,6 @@ namespace KrazyKatGames
             {
                 currentAIState = nextState;
             }
-            // the position/rotation should be reset after the state machine has processed it
-            // navMeshAgent.transform.localPosition = Vector3.zero;
-            // navMeshAgent.transform.localRotation = Quaternion.identity;
         }
     }
 }
