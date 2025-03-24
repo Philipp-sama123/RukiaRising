@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace KrazyKatGames
@@ -10,7 +11,6 @@ namespace KrazyKatGames
         public List<WeaponItem> weaponItems;
 
         public WeaponItem unarmedItem;
-        public WeaponItem currentEquippedItem;
 
         public WeaponHolderSlot[] slots;
         public WeaponHolderSlot leftHandSlot;
@@ -89,20 +89,24 @@ namespace KrazyKatGames
                     Destroy(child.gameObject);
                 }
             }
+            if (currentEquippedItem != null)
+            {
+                Destroy(currentEquippedItem);
+            }
 
             // Instantiate the new weapon model
             if (weaponItem.weaponModel != null)
             {
                 if (weaponItem.weaponType == WeaponType.Bow)
                 {
-                    Instantiate(weaponItem.weaponModel, leftHandSlot.transform);
+                    currentEquippedItem = Instantiate(weaponItem.weaponModel, leftHandSlot.transform);
 
                     player.playerCombatManager.hasBow = true;
                     player.playerCombatManager.isArmed = false;
                 }
                 else if (weaponItem.weaponType == WeaponType.Melee)
                 {
-                    Instantiate(weaponItem.weaponModel, rightHandSlot.transform);
+                    currentEquippedItem = Instantiate(weaponItem.weaponModel, rightHandSlot.transform);
 
                     player.playerCombatManager.hasBow = false;
                     player.playerCombatManager.isArmed = true;
@@ -111,12 +115,36 @@ namespace KrazyKatGames
                 {
                     player.playerCombatManager.hasBow = false;
                     player.playerCombatManager.isArmed = false;
+
+                    currentEquippedItem = null;
                 }
             }
+            currentEquippedWeaponItem = weaponItem;
 
-            currentEquippedItem = weaponItem;
-
+            // as is safer to use than a direct cast!!
+            MeleeWeaponItem meleeWeaponItem = weaponItem as MeleeWeaponItem;
+            if (meleeWeaponItem != null)
+            {
+                player.playerCombatManager.maxComboCount = meleeWeaponItem.attackCombos.Length;
+            }
+            IgnoreCollisionBetweenPlayerAndWeapon();
             // Additional logic (if any) to handle stats, animations, etc., can be added here
+        }
+        private void IgnoreCollisionBetweenPlayerAndWeapon()
+        {
+            if (currentEquippedItem != null)
+            {
+                Collider[] playerColliders = player.GetComponentsInChildren<Collider>();
+                Collider weaponCollider = currentEquippedItem.GetComponentInChildren<Collider>();
+
+                if (weaponCollider != null)
+                {
+                    foreach (Collider col in playerColliders)
+                    {
+                        Physics.IgnoreCollision(weaponCollider, col);
+                    }
+                }
+            }
         }
 
         public void EquipNextWeaponItem()

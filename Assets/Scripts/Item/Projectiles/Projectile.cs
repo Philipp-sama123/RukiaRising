@@ -12,7 +12,10 @@ namespace KrazyKatGames
         [Header("Particle Effect Prefab")]
         public GameObject damageParticlePrefab; // Assign your particle system prefab here.
 
+        // Optional: Reference to the TrailRenderer (if you want to adjust it via script)
+        private TrailRenderer trailRenderer;
         private Rigidbody rb;
+        public Material trailMaterial;
 
         public void Awake()
         {
@@ -23,6 +26,18 @@ namespace KrazyKatGames
                 damageCollider.enabled = false; // Disable initially to avoid premature collisions
 
             rb = GetComponent<Rigidbody>();
+
+            // Attempt to get the TrailRenderer component.
+            trailRenderer = GetComponent<TrailRenderer>();
+            if (trailRenderer != null)
+            {
+                // Customize the trail
+                trailRenderer.time = 1f; // Trail duration in seconds
+                trailRenderer.startWidth = 0.2f; // Width at the start of the trail
+                trailRenderer.endWidth = 0.01f; // Width at the end (taper off to zero)
+                // You can also assign a material if needed:
+                 trailRenderer.material = trailMaterial;
+            }
         }
 
         public void FixedUpdate()
@@ -36,7 +51,7 @@ namespace KrazyKatGames
                 rb.linearVelocity = Vector3.zero; // Stop the projectile
             }
         }
-
+        
         public void IgnoreCollisionWith(Collider colliderToIgnore)
         {
             if (damageCollider != null)

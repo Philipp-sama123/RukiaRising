@@ -17,6 +17,18 @@ namespace KrazyKatGames
         {
             _currentProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
 
+            // If lockedTarget exists, rotate projectile to face the target.
+            if (_playerCombatManager.lockOnTarget != null)
+            {
+                Vector3 directionToTarget = (_playerCombatManager.lockOnTarget.lockOnTransform.transform.position - transform.position).normalized;
+                _currentProjectile.transform.forward = directionToTarget;
+            }
+            else
+            {
+                // If no target is locked, use the player's forward direction.
+                _currentProjectile.transform.forward = _playerCombatManager.transform.forward;
+            }
+
             IgnoreCollisionBetweenArrowAndPlayer();
 
             _currentProjectile.transform.parent = null; // Ensure the projectile isn't parented to the spawner
@@ -29,6 +41,7 @@ namespace KrazyKatGames
 
             _currentProjectile.isActive = true;
         }
+
         private void IgnoreCollisionBetweenArrowAndPlayer()
         {
             foreach (DamageCollider damageCollider in _playerCombatManager.DamageColliders)

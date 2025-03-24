@@ -15,7 +15,7 @@ namespace KrazyKatGames
         [SerializeField] private float sprintingSpeed = 6f;
         [SerializeField] private float rotationSpeed = 15f;
         [SerializeField] private float inAirMovementSpeedMultiplier = 0.35f;
-        
+
         [SerializeField] private float lockOnRotationSpeed = 10f;
 
         [Header("Jump Settings")]
@@ -117,7 +117,7 @@ namespace KrazyKatGames
         }
         private void HandleLockOnMovement()
         {
-            if (_player.playerCombatManager.lockOnTarget == null || _player.isDead) return;
+            if (_player.playerCombatManager.lockOnTarget == null || _player.isDead || !_player.canMove) return;
 
             // Use input for movement direction
             Vector3 cameraForward = _player.playerCamera.transform.forward;
@@ -133,16 +133,16 @@ namespace KrazyKatGames
             _moveDirection.Normalize();
 
             // Move the character
-            float speed = _player.isSprinting? runningSpeed : walkingSpeed;
+            float speed = _player.isSprinting ? runningSpeed : walkingSpeed;
             _player.characterController.Move(_moveDirection * speed * Time.deltaTime);
         }
 
         private void HandleLockOnRotation()
         {
-            if (_player.playerCombatManager.lockOnTarget == null || _player.isDead) return;
+            if (_player.playerCombatManager.lockOnTarget == null || _player.isDead || !_player.canRotate) return;
 
             // Calculate direction to the lock-on target
-            Vector3 directionToTarget = _player.playerCombatManager.lockOnTarget.transform.position - transform.position;
+            Vector3 directionToTarget = _player.playerCombatManager.lockOnTarget.lockOnTransform.transform.position - transform.position;
             directionToTarget.y = 0; // Ignore vertical rotation
 
             if (directionToTarget != Vector3.zero)
@@ -240,7 +240,7 @@ namespace KrazyKatGames
 
         public void AttemptToPerformDodge()
         {
-          //  if (_player.isPerformingAction || _player.currentStamina <= 0) return;
+            //  if (_player.isPerformingAction || _player.currentStamina <= 0) return;
 
             if (_player.isStrafing)
             {

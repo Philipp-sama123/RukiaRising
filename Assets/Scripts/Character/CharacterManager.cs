@@ -11,6 +11,8 @@ namespace KrazyKatGames
         public CharacterCombatManager characterCombatManager;
         public CharacterAnimatorManager characterAnimatorManager;
         public CharacterLocomotionManager characterLocomotionManager;
+        public CharacterEquipmentManager characterEquipmentManager;
+        public LockOnTransform lockOnTransform;
 
         public float currentStamina = 100;
         public float maxStamina = 100;
@@ -31,11 +33,15 @@ namespace KrazyKatGames
         protected virtual void Awake()
         {
             characterLocomotionManager = GetComponent<CharacterLocomotionManager>();
+            characterEquipmentManager = GetComponent<CharacterEquipmentManager>();
             characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
             characterCombatManager = GetComponent<CharacterCombatManager>();
             characterController = GetComponent<CharacterController>();
             audioSource = GetComponent<AudioSource>();
             animator = GetComponent<Animator>();
+            
+            lockOnTransform = GetComponentInChildren<LockOnTransform>();
+
         }
         protected virtual void Update()
         {

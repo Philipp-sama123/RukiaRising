@@ -4,7 +4,7 @@ namespace KrazyKatGames
 {
     public class PlayerCombatManager : CharacterCombatManager
     {
-        [SerializeField] private float lockOnRadius = 10f; // Radius to search for enemies
+        [SerializeField] private float lockOnRadius = 10f;
 
         public AICharacterManager lockOnTarget;
 
@@ -12,7 +12,7 @@ namespace KrazyKatGames
         private ProjectileSpawner _projectileSpawner;
 
         private int comboCount = 0;
-        private const int MAX_COMBO = 3;
+        public int maxComboCount = 0;
 
         /**
          * Animator direct set
@@ -54,7 +54,7 @@ namespace KrazyKatGames
             }
             if (hasBow)
             {
-                // set is aiming to true 
+                // set is aiming to true --> happens now in an animation state (!)
                 _player.playerAnimatorManager.PlayTargetActionAnimation("Bow_AimStart", true, true, true, false, .1f);
                 return;
             }
@@ -87,7 +87,7 @@ namespace KrazyKatGames
         }
         private string GetGroundAttackAnimationName()
         {
-            MeleeWeaponItem meleeWeapon = ((MeleeWeaponItem)_player.playerEquipmentManager.currentEquippedItem);
+            MeleeWeaponItem meleeWeapon = ((MeleeWeaponItem)_player.playerEquipmentManager.currentEquippedWeaponItem);
 
             if (meleeWeapon != null)
             {
@@ -97,7 +97,7 @@ namespace KrazyKatGames
         }
         private string GetAirAttackAnimationName()
         {
-            MeleeWeaponItem meleeWeapon = ((MeleeWeaponItem)_player.playerEquipmentManager.currentEquippedItem);
+            MeleeWeaponItem meleeWeapon = ((MeleeWeaponItem)_player.playerEquipmentManager.currentEquippedWeaponItem);
 
             if (meleeWeapon != null)
             {
@@ -122,7 +122,7 @@ namespace KrazyKatGames
 
         private void PerformComboAttack(bool isAirAttack)
         {
-            if (comboCount < MAX_COMBO)
+            if (comboCount < maxComboCount)
             {
                 comboCount++;
 

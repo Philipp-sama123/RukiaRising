@@ -7,7 +7,6 @@ namespace KrazyKatGames
         public PlayerAnimatorManager playerAnimatorManager;
         public PlayerCombatManager playerCombatManager;
         public PlayerCamera playerCamera;
-        public LockOnTransform lockOnTransform;
 
         public bool isStrafing = true;
 
@@ -19,8 +18,6 @@ namespace KrazyKatGames
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
             playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             playerCombatManager = GetComponent<PlayerCombatManager>();
-
-            lockOnTransform = GetComponentInChildren<LockOnTransform>();
         }
         protected override void Start()
         {

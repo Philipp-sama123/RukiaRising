@@ -1665,6 +1665,50 @@ Transform:
   - {fileID: 2588430231612322370}
   m_Father: {fileID: 4322520505553487379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3125610658627271174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4215622433341952127}
+  - component: {fileID: 3143324398042421990}
+  m_Layer: 0
+  m_Name: LockOnTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4215622433341952127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125610658627271174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890507539488883739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3143324398042421990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125610658627271174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d263bbabeb79c4e4ebf083a5eca2ade7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3160184697386393193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2518,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8518942406372779067}
+  - {fileID: 4215622433341952127}
   m_Father: {fileID: 577407809792155333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4556143712654878053
@@ -6065,6 +6110,7 @@ GameObject:
   - component: {fileID: 1013137062887618582}
   - component: {fileID: 1135654425606421522}
   - component: {fileID: 1491478527095169817}
+  - component: {fileID: 7431633497248222856}
   m_Layer: 0
   m_Name: AI_Zombie_Shorts
   m_TagString: Untagged
@@ -6453,6 +6499,8 @@ MonoBehaviour:
   characterCombatManager: {fileID: 0}
   characterAnimatorManager: {fileID: 0}
   characterLocomotionManager: {fileID: 0}
+  characterEquipmentManager: {fileID: 0}
+  lockOnTransform: {fileID: 0}
   currentStamina: 100
   maxStamina: 100
   currentHealth: 100
@@ -6476,6 +6524,20 @@ MonoBehaviour:
   patrolState: {fileID: 11400000, guid: 028ff481d92114d70a5ff94fd73994d1, type: 2}
   attackState: {fileID: 11400000, guid: b0f863329db1e45fdb6c7c5cee86bd24, type: 2}
   stoppingDistance: 1
+--- !u!114 &7431633497248222856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038069929827741718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d31144dc6d42e298d894f2a6e21701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEquippedWeaponItem: {fileID: 0}
+  currentEquippedItem: {fileID: 0}
 --- !u!1 &9042529037455373339
 GameObject:
   m_ObjectHideFlags: 0
