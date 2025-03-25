@@ -1,58 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2210171966247514314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6093335949405823074}
-  - component: {fileID: 2618327736147516042}
-  m_Layer: 0
-  m_Name: DamageCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6093335949405823074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2210171966247514314}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0004464096, y: -0.038440295, z: 0.0026622862, w: 0.9992573}
-  m_LocalPosition: {x: -0.136, y: -0.008, z: 0.001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4468906476894603105}
-  m_LocalEulerAnglesHint: {x: 0.063, y: -4.406, z: 0.303}
---- !u!65 &2618327736147516042
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2210171966247514314}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.53, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2350610851264408180
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +44,8 @@ GameObject:
   - component: {fileID: 1859553622439820952}
   - component: {fileID: 6251863252250284882}
   - component: {fileID: 3616043956717991694}
-  m_Layer: 0
+  - component: {fileID: 8123443844387812890}
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,8 +64,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6093335949405823074}
+  m_Children: []
   m_Father: {fileID: 3910877806973395156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1859553622439820952
@@ -185,10 +132,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffb2d5cda3546ac8ff7bb656258bf02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageCollider: {fileID: 2618327736147516042}
+  damageCollider: {fileID: 8123443844387812890}
   damageColliderType: 4
   trailEffect: {fileID: 0}
   damageParticlePrefab: {fileID: 8007369982305464528, guid: b6588b95ecec34b8e8a2dcd9949c3d44, type: 3}
+--- !u!65 &8123443844387812890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2967643162007544036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75, y: 0.1, z: 0.15}
+  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!1 &2998955399864220097
 GameObject:
   m_ObjectHideFlags: 0

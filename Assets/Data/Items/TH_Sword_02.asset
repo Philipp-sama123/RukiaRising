@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   weaponType: 1
-  weaponModel: {fileID: 2350610851264408180, guid: 1ab1b910778b14fbc825a60f4608a898, type: 3}
+  weaponModel: {fileID: 2350610851264408180, guid: fe79164d1caf44ea494841150eb22e36, type: 3}
   attackCombos:
   - TH_Sword_Attack1
   - TH_Sword_Attack2
   - TH_Sword_Attack3
-  - TH_Sword_Attack4
   airAttackCombos:
   - Sword_Air_Attack_01
   - Sword_Air_Attack_02

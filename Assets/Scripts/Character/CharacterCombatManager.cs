@@ -53,7 +53,7 @@ namespace KrazyKatGames
                         rightHandDamageCollider = damageCollider;
                         break;
                     case DamageColliderType.MeleeWeapon:
-                      //  weaponDamageCollider = damageCollider;
+                        //  weaponDamageCollider = damageCollider;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -94,7 +94,7 @@ namespace KrazyKatGames
                     Debug.LogWarning("No DamageCollider attached to Weapon!");
             }
             else
-                Debug.LogWarning("No Weapon equipped!");
+                Debug.LogWarning("No Weapon equipped on character! " + this.gameObject.name);
         }
 
         /**

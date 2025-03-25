@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   weaponType: 1
-  weaponModel: {fileID: 2350610851264408180, guid: 1ab1b910778b14fbc825a60f4608a898, type: 3}
+  weaponModel: {fileID: 2350610851264408180, guid: 31d37265831f64ca4a2993f24285c6d4, type: 3}
   attackCombos:
   - OH_Dagger_Attack1
   - OH_Dagger_Attack2

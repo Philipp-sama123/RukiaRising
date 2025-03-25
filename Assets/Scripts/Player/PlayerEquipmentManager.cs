@@ -9,7 +9,6 @@ namespace KrazyKatGames
         private PlayerManager player;
 
         public List<WeaponItem> weaponItems;
-
         public WeaponItem unarmedItem;
 
         public WeaponHolderSlot[] slots;
@@ -21,7 +20,6 @@ namespace KrazyKatGames
         public override void Awake()
         {
             base.Awake();
-
             player = GetComponent<PlayerManager>();
             slots = GetComponentsInChildren<WeaponHolderSlot>();
 
@@ -71,49 +69,33 @@ namespace KrazyKatGames
                 Debug.LogError("Attempted to equip a null item.");
                 return;
             }
+            
+            // If an item is already equipped, unequip it first
             if (currentEquippedItem != null)
             {
-                player.characterAnimatorManager.PlayTargetActionAnimation("Unequip", true, true);
-                Debug.Log($"Try Equipping item: {weaponItem.name} - unequipping from {currentEquippedItem}");
-                // TODO UNEQUIP LOGIC!! 
-                return;
+                Debug.Log($"Unequipping current item: {currentEquippedWeaponItem.name}");
+                UnequipWeaponItem();
+                //return;
             }
 
+            // Play equip animation
             player.characterAnimatorManager.PlayTargetActionAnimation("Equip", true, true);
             Debug.Log($"Equipping item: {weaponItem.name}");
 
-            // Destroy the existing weapon model in the left-hand slot
-            if (leftHandSlot.transform.childCount > 0)
-            {
-                foreach (Transform child in leftHandSlot.transform)
-                {
-                    Destroy(child.gameObject);
-                }
-            }
-            if (rightHandSlot.transform.childCount > 0)
-            {
-                foreach (Transform child in rightHandSlot.transform)
-                {
-                    Destroy(child.gameObject);
-                }
-            }
-            if (currentEquippedItem != null)
-            {
-                Destroy(currentEquippedItem);
-            }
+            // Clear previous weapon models from both hand slots
+            ClearWeaponSlot(leftHandSlot);
+            ClearWeaponSlot(rightHandSlot);
 
-            // Instantiate the new weapon model
+            // Instantiate the new weapon model based on the type
             if (weaponItem.weaponType == WeaponType.Bow)
             {
                 currentEquippedItem = Instantiate(weaponItem.weaponModel, leftHandSlot.transform);
-
                 player.playerCombatManager.hasBow = true;
                 player.playerCombatManager.isArmed = false;
             }
             else if (weaponItem.weaponType == WeaponType.Melee)
             {
                 currentEquippedItem = Instantiate(weaponItem.weaponModel, rightHandSlot.transform);
-
                 player.playerCombatManager.hasBow = false;
                 player.playerCombatManager.isArmed = true;
             }
@@ -121,10 +103,10 @@ namespace KrazyKatGames
             {
                 player.playerCombatManager.hasBow = false;
                 player.playerCombatManager.isArmed = false;
-
                 currentEquippedItem = null;
             }
-            // Set combo amount from weapon
+
+            // Set combo amount from weapon if applicable
             MeleeWeaponItem meleeWeaponItem = weaponItem as MeleeWeaponItem;
             if (meleeWeaponItem != null)
             {
@@ -133,23 +115,41 @@ namespace KrazyKatGames
             currentEquippedWeaponItem = weaponItem;
 
             IgnoreCollisionBetweenPlayerAndWeapon();
-            // Additional logic (if any) to handle stats, animations, etc., can be added here
         }
-        private void IgnoreCollisionBetweenPlayerAndWeapon()
-        {
-            if (currentEquippedItem != null)
-            {
-                Collider[] playerColliders = player.GetComponentsInChildren<Collider>();
-                Collider weaponCollider = currentEquippedItem.GetComponentInChildren<Collider>();
 
-                if (weaponCollider != null)
+        private void ClearWeaponSlot(WeaponHolderSlot slot)
+        {
+            if (slot.transform.childCount > 0)
+            {
+                foreach (Transform child in slot.transform)
                 {
-                    foreach (Collider col in playerColliders)
-                    {
-                        Physics.IgnoreCollision(weaponCollider, col);
-                    }
+                    Destroy(child.gameObject);
                 }
             }
+        }
+
+        public void UnequipWeaponItem()
+        {
+            player.characterAnimatorManager.PlayTargetActionAnimation("Unequip", true, true);
+            Debug.Log($"Unequipping item: {currentEquippedWeaponItem.name}");
+
+            ClearWeaponSlot(leftHandSlot);
+            ClearWeaponSlot(rightHandSlot);
+
+            // Destroy current equipped item if it exists (for safety)
+            if (currentEquippedItem != null)
+            {
+                Destroy(currentEquippedItem);
+            }
+
+            // Reset combat manager states
+            player.playerCombatManager.hasBow = false;
+            player.playerCombatManager.isArmed = false;
+            player.playerCombatManager.maxComboCount = 3; // default of unarmed 
+
+            // Clear equipped item references
+            currentEquippedItem = null;
+            currentEquippedWeaponItem = null;
         }
 
         public void EquipNextWeaponItem()
@@ -180,6 +180,23 @@ namespace KrazyKatGames
 
             // Equip the previous item
             EquipWeaponItem(weaponItems[currentIndex]);
+        }
+
+        private void IgnoreCollisionBetweenPlayerAndWeapon()
+        {
+            if (currentEquippedItem != null)
+            {
+                Collider[] playerColliders = player.GetComponentsInChildren<Collider>();
+                Collider weaponCollider = currentEquippedItem.GetComponentInChildren<Collider>();
+
+                if (weaponCollider != null)
+                {
+                    foreach (Collider col in playerColliders)
+                    {
+                        Physics.IgnoreCollision(weaponCollider, col);
+                    }
+                }
+            }
         }
     }
 }
