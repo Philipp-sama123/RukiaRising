@@ -8,9 +8,6 @@ namespace KrazyKatGames
     {
         public string[] attackCombos; 
         public string[] airAttackCombos; 
-        private void Awake()
-        {
-            weaponType = WeaponType.Melee;
-        }
+
     }
 }

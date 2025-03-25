@@ -71,7 +71,15 @@ namespace KrazyKatGames
                 Debug.LogError("Attempted to equip a null item.");
                 return;
             }
+            if (currentEquippedItem != null)
+            {
+                player.characterAnimatorManager.PlayTargetActionAnimation("Unequip", true, true);
+                Debug.Log($"Try Equipping item: {weaponItem.name} - unequipping from {currentEquippedItem}");
+                // TODO UNEQUIP LOGIC!! 
+                return;
+            }
 
+            player.characterAnimatorManager.PlayTargetActionAnimation("Equip", true, true);
             Debug.Log($"Equipping item: {weaponItem.name}");
 
             // Destroy the existing weapon model in the left-hand slot
@@ -95,38 +103,35 @@ namespace KrazyKatGames
             }
 
             // Instantiate the new weapon model
-            if (weaponItem.weaponModel != null)
+            if (weaponItem.weaponType == WeaponType.Bow)
             {
-                if (weaponItem.weaponType == WeaponType.Bow)
-                {
-                    currentEquippedItem = Instantiate(weaponItem.weaponModel, leftHandSlot.transform);
+                currentEquippedItem = Instantiate(weaponItem.weaponModel, leftHandSlot.transform);
 
-                    player.playerCombatManager.hasBow = true;
-                    player.playerCombatManager.isArmed = false;
-                }
-                else if (weaponItem.weaponType == WeaponType.Melee)
-                {
-                    currentEquippedItem = Instantiate(weaponItem.weaponModel, rightHandSlot.transform);
-
-                    player.playerCombatManager.hasBow = false;
-                    player.playerCombatManager.isArmed = true;
-                }
+                player.playerCombatManager.hasBow = true;
+                player.playerCombatManager.isArmed = false;
             }
-            if (weaponItem.weaponType == WeaponType.Unarmed)
+            else if (weaponItem.weaponType == WeaponType.Melee)
+            {
+                currentEquippedItem = Instantiate(weaponItem.weaponModel, rightHandSlot.transform);
+
+                player.playerCombatManager.hasBow = false;
+                player.playerCombatManager.isArmed = true;
+            }
+            else if (weaponItem.weaponType == WeaponType.Unarmed)
             {
                 player.playerCombatManager.hasBow = false;
                 player.playerCombatManager.isArmed = false;
 
                 currentEquippedItem = null;
             }
-            currentEquippedWeaponItem = weaponItem;
-
-            // as is safer to use than a direct cast!!
+            // Set combo amount from weapon
             MeleeWeaponItem meleeWeaponItem = weaponItem as MeleeWeaponItem;
             if (meleeWeaponItem != null)
             {
                 player.playerCombatManager.maxComboCount = meleeWeaponItem.attackCombos.Length;
             }
+            currentEquippedWeaponItem = weaponItem;
+
             IgnoreCollisionBetweenPlayerAndWeapon();
             // Additional logic (if any) to handle stats, animations, etc., can be added here
         }
