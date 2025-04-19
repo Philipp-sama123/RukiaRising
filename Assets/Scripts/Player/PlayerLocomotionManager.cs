@@ -191,6 +191,26 @@ namespace KrazyKatGames
         {
             if (_player.isDead || !_player.canRotate) return;
 
+            // ─── AIM‑ROTATION (no lock‑on) ─────────────────────
+            if (_player.playerCombatManager.hasBow &&
+                _player.playerCombatManager.isAiming &&
+                _player.playerCombatManager.lockOnTarget == null)
+            {
+                // Project camera forward onto horizontal plane
+                Vector3 aimDir = _player.playerCamera.cameraObject.transform.forward;
+                aimDir.y = 0f;
+                if (aimDir.sqrMagnitude > 0.001f)
+                {
+                    Quaternion targetRot = Quaternion.LookRotation(aimDir);
+                    transform.rotation = Quaternion.Slerp(
+                        transform.rotation,
+                        targetRot,
+                        rotationSpeed * Time.deltaTime
+                    );
+                }
+                return;
+            }
+
             if (_player.isStrafing)
                 HandleStrafingRotation();
             else
